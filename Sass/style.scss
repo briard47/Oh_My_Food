@@ -1,0 +1,205 @@
+//Général//
+*{
+    font-family: 'Roboto', sans-serif;
+
+} 
+
+    $main-color: #9356DC; //purple//
+    $secondary-color:#FF79DA;//pink//
+    $tertiary-color: #99E2D0;//teal//
+    $background:#f3f3f3 ;
+
+    .fa-grey{
+        color: #7E7E7E;
+    }
+
+    .fa-purple{
+        color:$main-color
+    }
+    //Body//
+
+body{
+    display: flex;
+    flex-direction: column;
+    margin:0;
+
+       button{
+            background-color: $background;
+            
+        }
+    header{
+        display: flex;
+        flex-direction: column;
+        nav{
+            position:relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            gap:4em;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+            button{
+                align-self: center;
+                margin-left: 1em;
+                background-color: white;
+                border: none;
+                visibility: hidden;
+            }
+            img{
+               max-width: 50%;
+               margin: 0.5em 0em 0.5em 0em;
+            }
+        } 
+        .location{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            background-color:#EAEAEA;
+            padding:1em 0em 1em 0em;
+         }
+    }
+   
+    .info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        background-color: $background;
+        gap:1em;
+        padding:3em 0em 3em 0em;
+        h2, p{
+            margin:0;
+        }
+        p{
+            font-weight: 300;
+            font-size: 18px;
+        }
+        button{
+            margin-top: 1em;
+            background:linear-gradient(0deg, $main-color -11.44%, $secondary-color 123.93%);
+            border-radius: 35px;
+            border:none;
+            color: white;
+            max-width: fit-content;
+            align-self: center;
+            padding:1em 1.5em 1em 1.5em;
+            font-weight: 500;
+            font-size: 16px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+            &:hover{
+                opacity: 0.9 ;
+            }
+        }
+       
+    }
+
+    .fonctionnement{
+        margin:3em;
+        display: flex;
+        flex-direction: column;
+        h3{
+            font-size: 24px;
+            margin-top: 0;
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap:1.5em;
+            button{
+                width: 90%;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                font-weight: 500;
+                font-size: 13px;
+                padding:1.5em 1em 1.5em 1em;
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+                border:none;
+                border-radius: 20px;
+                gap:1em;
+                .number{
+                    margin-left: -1.5em;
+                    color: white;
+                    background-color: $main-color;
+                    border-radius: 20px;
+                    font-size: small;
+                    padding: 0.1em 0.4em 0em 0.4em;
+                }
+            }
+        }
+    }
+
+    .restaurants{
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: $background;
+        h3{
+            margin-left:1em ;
+        }
+        .menus{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .card{
+                margin:1em;
+                width: 95%;
+                background-color: white;
+                border-radius: 20px;
+                img{
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                object-fit: cover;
+                width: 100%;
+                height: 200px;
+                }
+                div{
+                    margin:0.5em;
+                    display: flex;
+                    justify-content: space-between;
+                    .card-text{
+                        display: flex;
+                        flex-direction: column;
+                        h2, p{
+                        margin:0.1em;
+                        }
+                        h2{
+                            font-size: 18px;
+                            font-weight: 700;
+                        }
+                        p{
+                            font-weight: 300;
+                            font-size: 17px;
+                        }
+                    }
+                    .like{
+                        align-self: center;
+                        font-size: xx-large;
+                        padding-right: 0.5em;
+                   
+                    }
+                    
+                }
+            }
+        }
+    }
+
+ 
+
+    footer{   
+        display: flex;
+        flex-direction: column;
+        color:#EAEAEA;
+        background-color: #353535;
+        padding: 1.5em;
+        gap:0.5em;
+        h1{
+            font-size:large;
+        font-family: 'Shrikhand', cursive;
+        } 
+        a{
+            font-weight: 400;
+            font-size: 16px;
+        }
+    }
+}
