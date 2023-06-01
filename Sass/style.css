@@ -79,7 +79,8 @@ body .info button {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 }
 body .info button:hover {
-  opacity: 0.9;
+  opacity: 0.75;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
 }
 body .fonctionnement {
   margin: 3em;
@@ -165,10 +166,25 @@ body .restaurants .menus .card div .card-text p {
   font-weight: 300;
   font-size: 17px;
 }
+body .restaurants .menus .card div input {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
 body .restaurants .menus .card div .like {
   align-self: center;
-  font-size: xx-large;
+  font-size: 35px;
   padding-right: 0.5em;
+  padding-top: 0.3em;
+  background: linear-gradient(0deg, #FF79DA -11.44%, #9356DC 123.93%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: white;
+  transition: 3s;
+}
+body .restaurants .menus .card div input:checked + .like {
+  font-weight: 900;
+  color: transparent;
 }
 body footer {
   display: flex;
