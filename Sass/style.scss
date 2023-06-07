@@ -9,6 +9,9 @@
     $tertiary-color: #99E2D0;//teal//
     $fourth-color:#008766; //dark green//
     $background:#f3f3f3 ;
+    $breakpoint-tablet:600px;
+    $breakpoint-desktop:1024px;
+    $max-screen:1440px;
 
     .fa-grey{
         color: #7E7E7E;
@@ -34,6 +37,11 @@ body{
             background-color: $background;
             
         }
+        @media screen  and (min-width: $max-screen) {
+            max-width:$max-screen;
+            margin:auto
+            
+        }
     header{
         display: flex;
         flex-direction: column;
@@ -41,19 +49,28 @@ body{
             position:relative;
             display: flex;
             flex-direction: row;
-            justify-content: flex-start;
+            justify-content: center;
             gap:4em;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
             button{
-                align-self: center;
-                margin-left: 1em;
+                position: absolute;
+                left: 5%;
+                top: 40%;
                 background-color: white;
-                border: none;
+                border: none; 
                 visibility: hidden;
             }
             img{
                max-width: 50%;
                margin: 0.5em 0em 0.5em 0em;
+               @media screen and (min-width: $breakpoint-tablet){
+                max-width: 35%;
+                margin-top: 2em;
+                margin-bottom: 2em;
+               }
+               @media screen and (min-width: $breakpoint-desktop) {
+                max-width: 25%;                
+               }
             }
         } 
         .location{
@@ -75,12 +92,19 @@ body{
         padding:3em 0em 3em 0em;
         h2, p{
             margin:0;
+            padding:0em 1.5em 0em 1.5em;
+        }
+        h2{
+            @media screen and (min-width: $breakpoint-tablet){
+                font-size: 40px;
+                }
         }
         p{
             font-weight: 300;
             font-size: 18px;
         }
-        button{
+        a{
+            text-decoration: none;
             margin-top: 1em;
             background:linear-gradient(0deg, $main-color -11.44%, $secondary-color 123.93%);
             border-radius: 35px;
@@ -105,15 +129,28 @@ body{
         margin:3em;
         display: flex;
         flex-direction: column;
+        @media screen and (min-width: $breakpoint-tablet){
+        padding-left:2em;
+        padding-right:2em;
+        }
+        @media screen and (min-width: $breakpoint-desktop){
+            padding-left: 8em;
+            padding-right: 8em;
+        }
         h3{
             font-size: 24px;
             margin-top: 0;
+            
         }
-        div{
+        div{       
             display: flex;
             flex-direction: column;
             align-items: center;
             gap:1.5em;
+            @media screen and (min-width: $breakpoint-desktop){
+            flex-direction: row;
+            justify-content: center;
+        }
             button{
                 width: 90%;
                 display: flex;
@@ -126,6 +163,13 @@ body{
                 border:none;
                 border-radius: 20px;
                 gap:1em;
+                @media screen and (min-width: $breakpoint-tablet){
+                    max-width: 50%;
+                }
+                @media screen and (min-width: $breakpoint-desktop){
+                    max-width: 35%;
+                    gap:1em;
+                }
                 .number{
                     margin-left: -1.5em;
                     color: white;
@@ -143,18 +187,42 @@ body{
         display: flex;
         flex-direction: column;
         background-color: $background;
-        h3{
-            margin-left:1em ;
+        @media screen and (min-width: $breakpoint-tablet){
+         padding-left: 2em;
+         padding-right: 2em;
         }
+        @media screen and (min-width: $breakpoint-desktop){
+            padding-left: 8em;
+            padding-right: 8em;
+        }
+        h3{
+            font-size: 24px;
+            margin-left:2em ;
+            }
+           
+        
         .menus{
             display: flex;
             flex-direction: column;
             align-items: center;
+            @media screen and (min-width: $breakpoint-tablet){
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
             .card{
                 margin:1em;
                 width: 95%;
                 background-color: white;
                 border-radius: 20px;
+                @media screen and (min-width: $breakpoint-tablet){
+                    width: 42%;
+                }
+                @media screen and (min-width: $breakpoint-desktop){
+                    margin-left: 1.8em;
+                    margin-right:1.8em;
+                }
                 a{
                     display: flex;
                     flex-direction: column;
@@ -163,6 +231,9 @@ body{
                 border-top-right-radius: 20px;
                 width: 100%;
                 height: 200px;
+                @media screen and (min-width: $breakpoint-tablet){
+                    object-fit: cover;
+                }
                 }
                 .badge{
                     position: absolute;
@@ -225,15 +296,34 @@ body{
         flex-direction: column;
         color:#EAEAEA;
         background-color: #353535;
-        padding: 1.5em;
+        padding: 1em;
         gap:0.5em;
-        h1{
-            font-size:large;
-        font-family: 'Shrikhand', cursive;
+        @media screen and (min-width: $breakpoint-tablet){
+         flex-direction: row-reverse;
+         padding-top: 2em;
+        }
+        img{
+            filter: invert(100%);
+            max-height:20px;
+            max-width:80px;
+            padding: 0.5em;
+            @media screen and (min-width: $breakpoint-tablet){
+                padding-top: 0;
+                padding-left:4em;
+                max-width: 120px;
+            }
         } 
-        a{
-            font-weight: 400;
-            font-size: 16px;
+        div{
+            display: flex;
+            flex-direction: column;
+            @media screen and (min-width: $breakpoint-tablet){
+                flex-direction: row;
+                gap:2em;
+            }
+            a{
+                font-weight: 400;
+                font-size: 16px;
+            }
         }
     }
 }
