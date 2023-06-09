@@ -1,0 +1,265 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  animation: fadein 2s;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body button {
+  background-color: #f3f3f3;
+}
+@media screen and (min-width: 1440px) {
+  body {
+    max-width: 1440px;
+    margin: auto;
+  }
+}
+body header {
+  display: flex;
+  flex-direction: column;
+}
+body header nav {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 4em;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+body header nav button {
+  position: absolute;
+  left: 5%;
+  top: 40%;
+  background-color: white;
+  border: none;
+}
+body header nav img {
+  max-width: 50%;
+  margin: 0.5em 0em 0.5em 0em;
+}
+@media screen and (min-width: 600px) {
+  body header nav img {
+    max-width: 35%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body header nav img {
+    max-width: 25%;
+  }
+}
+body img {
+  max-height: 250px;
+  z-index: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body section {
+  z-index: 1;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: -3em;
+  border-radius: 20px;
+  background-color: #f3f3f3;
+  transition: 3s;
+}
+body section .title {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 1em 0em 2em;
+}
+body section .title h1 {
+  font-family: "Shrikhand";
+  font-size: 28px;
+  font-weight: 400;
+  font-style: italic;
+}
+body section .title input {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+body section .title .like {
+  align-self: center;
+  font-size: 28px;
+  padding-right: 0.5em;
+  padding-top: 1em;
+  background: linear-gradient(0deg, #FF79DA -11.44%, #9356DC 123.93%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: white;
+  transition: 3s;
+}
+body section .title input:checked + .like {
+  font-weight: 900;
+  color: transparent;
+}
+body section .card-section {
+  display: flex;
+  flex-direction: column;
+}
+body section .card-section h2 {
+  font-weight: 300;
+  font-size: 16px;
+  margin-left: 1em;
+  border-bottom: 4px solid #99E2D0;
+  width: 40px;
+}
+body section .card-section div {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+body section .card-section .card {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  margin: 0.5em;
+  border-radius: 20px;
+  box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+}
+body section .card-section .card div {
+  min-width: 0;
+  width: 80%;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body section .card-section .card div h3 {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0em 0em 0.2em 1.5em;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body section .card-section .card div p {
+  font-size: 15px;
+  font-weight: 300;
+  padding: 0.2em 0em 0em 1.5em;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body section .card-section .card span {
+  font-size: 18px;
+  font-weight: 500;
+  align-self: flex-end;
+  padding: 2.3em 1em 1em 1em;
+  transition: 3s;
+}
+body section .card-section label {
+  position: absolute;
+  right: -4em;
+  height: 5.1em;
+  margin-top: 0.5em;
+  display: flex;
+  width: 4em;
+  background: #99E2D0;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  visibility: hidden;
+  transition: 3s;
+}
+body section .card-section label input {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+body section .card-section label .check {
+  align-self: center;
+  justify-self: center;
+  font-size: 25px;
+  color: white;
+}
+body section .card-section .card:hover + label {
+  visibility: visible;
+  right: 0.4em;
+}
+body section .card-section .card:hover > span {
+  padding-right: 4em;
+}
+body section .card-section .card:hover > div {
+  width: 62%;
+}
+body .order {
+  text-decoration: none;
+  margin-top: 1em;
+  background: linear-gradient(0deg, #9356DC -11.44%, #FF79DA 123.93%);
+  border-radius: 35px;
+  border: none;
+  color: white;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  align-self: center;
+  margin: 2em;
+  padding: 1em 3em 1em 3em;
+  font-weight: 500;
+  font-size: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  transition: 1s;
+}
+body .order:hover {
+  opacity: 0.75;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+}
+body footer {
+  display: flex;
+  flex-direction: column;
+  color: #EAEAEA;
+  background-color: #353535;
+  padding: 1em;
+  gap: 0.5em;
+}
+@media screen and (min-width: 600px) {
+  body footer {
+    flex-direction: row-reverse;
+    padding-top: 2em;
+  }
+}
+body footer img {
+  filter: invert(100%);
+  max-height: 20px;
+  max-width: 80px;
+  padding: 0.5em;
+}
+@media screen and (min-width: 600px) {
+  body footer img {
+    padding-top: 0;
+    padding-left: 4em;
+    max-width: 120px;
+  }
+}
+body footer div {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 600px) {
+  body footer div {
+    flex-direction: row;
+    gap: 2em;
+  }
+}
+body footer div a {
+  font-weight: 400;
+  font-size: 16px;
+}/*# sourceMappingURL=style-restaurant.css.map */
