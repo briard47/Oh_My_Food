@@ -14,15 +14,6 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  animation: fadein 2s;
-}
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 body button {
   background-color: #f3f3f3;
@@ -31,6 +22,48 @@ body button {
   body {
     max-width: 1440px;
     margin: auto;
+  }
+}
+body .spin {
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  will-change: transform;
+  animation: 1.5s linear 2 spinner, 3s fade forwards;
+  animation-play-state: running;
+  border: solid 10px white;
+  border-bottom-color: #9356DC;
+  border-radius: 50%;
+}
+@keyframes spinner {
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+body .fade-in {
+  background-color: white;
+  animation: fadein 4s;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 body header {

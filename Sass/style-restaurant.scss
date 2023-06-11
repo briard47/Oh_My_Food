@@ -20,17 +20,49 @@ body{
     display: flex;
     flex-direction: column;
     margin:0;
-    animation: fadein 2s;
 
-    @keyframes fadein {
-        from { opacity: 0; }
-        to   { opacity: 1; }
-    }
-
-       button{
-            background-color: $background;
-            
+    .spin {
+        height: 40px;
+        width: 40px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        will-change: transform;
+        animation: 1.5s linear 2 spinner, 3s fade forwards;
+        animation-play-state:running;
+        border: solid 10px white;
+        border-bottom-color: $main-color;
+        border-radius: 50%;
+        @keyframes spinner {
+        0% {
+          transform: translate3d(-50%, -50%, 0) rotate(0deg);
         }
+        100% {
+          transform: translate3d(-50%, -50%, 0) rotate(360deg);
+        }
+      }
+      @keyframes fade {
+        0%{
+            opacity:1; 
+        }
+        
+        100%{
+            opacity:0;
+        }
+      }
+      }   
+
+      .fade-in{
+        background-color: white;
+
+        animation: fadein 4s;
+
+        @keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+      }
         @media screen  and (min-width: $max-screen) {
             max-width:$max-screen;
             margin:auto
@@ -39,6 +71,7 @@ body{
     header{
         display: flex;
         flex-direction: column;
+        width: 100%;
         nav{
             position:relative;
             display: flex;
@@ -69,10 +102,15 @@ body{
     }
     img{
         max-height:250px;
+        position: relative;
         z-index: 0;
         object-fit: cover;
+        @media screen and (min-width: $breakpoint-tablet){
+            max-height: 400px;
+        }
     }
     section{
+        position: relative;
         z-index: 1;
         max-width: 100%;
         display: flex;
@@ -90,6 +128,7 @@ body{
             font-size: 28px;
             font-weight: 400;
             font-style: italic;
+            
             }
             input{
             height: 0;
@@ -109,6 +148,9 @@ body{
                 input:checked +.like{
                font-weight: 900;
                color: transparent;
+                }
+                @media screen and (min-width: $breakpoint-tablet){
+                justify-content: center;
                 }
             }
         .card-section{
@@ -182,6 +224,16 @@ body{
                     border-bottom-right-radius: 20px;
                     visibility: hidden;
                     transition:3s;
+                    @media screen and (min-width: $breakpoint-tablet){
+                        right:5em;
+                    }
+                    @media screen and (min-width: $breakpoint-desktop){
+                        right:15em;
+                    }
+                    @media screen and (min-width: $max-screen){
+                        position: relative;
+                        right:0px;
+                    }
                 input{
                     height: 0;
                     width: 0;
@@ -197,6 +249,15 @@ body{
             .card:hover + label{
                 visibility: visible;
                 right:0.4em;
+                @media screen and (min-width: $breakpoint-tablet){
+                    right: 9em;
+                }
+                @media screen and (min-width: $breakpoint-desktop){
+                    right: 18em;
+                }
+                @media screen and (min-width: $max-screen){
+                    right:60px;
+                }
             }
             .card:hover > span{
                 padding-right: 4em;
@@ -204,6 +265,19 @@ body{
             .card:hover > div{
                 width:62%;
             }
+        }
+        @media screen and (min-width: $breakpoint-tablet){
+            margin-left: 5em;
+            margin-right: 5em;
+            padding-left: 4em;
+            padding-right: 4em;
+            justify-content: center;
+        }
+        @media screen and (min-width: $breakpoint-desktop){
+            margin-left: 10em;
+            margin-right: 10em;
+            padding-left: 8em;
+            padding-right: 8em;
         }
     }
     .order{
