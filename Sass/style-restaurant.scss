@@ -55,7 +55,8 @@ body{
 
       .fade-in{
         background-color: white;
-
+        display: flex;
+        flex-direction: column;
         animation: fadein 4s;
 
         @keyframes fadein {
@@ -79,13 +80,19 @@ body{
             justify-content: center;
             gap:4em;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-            button{
+            a{
                 position: absolute;
                 left: 5%;
                 top: 40%;
                 background-color: white;
-                border: none; 
+                border: none;  
+                font-size:x-large;
+                text-decoration: none;
+               
             }
+             a:visited{
+                color:black
+                }
             img{
                max-width: 50%;
                margin: 0.5em 0em 0.5em 0em;
@@ -118,7 +125,6 @@ body{
         margin-top: -3em;
         border-radius: 20px;
         background-color: $background;
-        transition:3s;
         .title{
             display: flex;
             justify-content: space-between;
@@ -135,20 +141,41 @@ body{
             width: 0;
             visibility: hidden;
             }
-                .like{
+            .like{
                 align-self: center;
-                font-size: 28px;
+                font-size: 35px;
                 padding-right: 0.5em;
-                padding-top: 1em;    
+                padding-top: 0.3em;    
                 background:linear-gradient(0deg, $secondary-color -11.44% , $main-color 123.93%);
+                -webkit-background-clip: text;
                 background-clip: text;
+                color: black;
+                
+            }
+            .like:before{
+                position:relative;
+                content: "\f004";
+                left:35px;
+                z-index: 2;
+                transition:3s;
+            }
+            .like:after{
                 color: white;
+                position:relative;
+                content: "\f004";
                 transition: 3s;
-                }
-                input:checked +.like{
+                z-index: 1;
+            }
+            input:checked +.like:before{
+                opacity:0;
+            }
+            input:checked +.like:after{
+                background:linear-gradient(0deg, $secondary-color -11.44% , $main-color 123.93%);
+                -webkit-background-clip: text;
+                background-clip: text;
                font-weight: 900;
                color: transparent;
-                }
+            }
                 @media screen and (min-width: $breakpoint-tablet){
                 justify-content: center;
                 }
@@ -209,12 +236,12 @@ body{
                     font-weight: 500;
                     align-self: flex-end;
                     padding:2.3em 1em 1em 1em;
-                    transition:3s;
+                    transition:2s;
                 }                
             }       
             label{
                     position:absolute;
-                    right:-4em;
+                    right:0.4em;
                     height: 5.1em;
                     margin-top: 0.5em;
                     display: flex;
@@ -222,17 +249,18 @@ body{
                     background:$tertiary-color;
                     border-top-right-radius: 20px;
                     border-bottom-right-radius: 20px;
-                    visibility: hidden;
-                    transition:3s;
+                    transform-origin: right;
+                    transform: scaleX(0);
+                    transition:2s;
                     @media screen and (min-width: $breakpoint-tablet){
-                        right:5em;
+                        right:4.5em;
                     }
                     @media screen and (min-width: $breakpoint-desktop){
-                        right:15em;
+                        right:8.5em;
                     }
                     @media screen and (min-width: $max-screen){
                         position: relative;
-                        right:0px;
+                        right:65px;
                     }
                 input{
                     height: 0;
@@ -247,17 +275,8 @@ body{
                 }
             }           
             .card:hover + label{
-                visibility: visible;
-                right:0.4em;
-                @media screen and (min-width: $breakpoint-tablet){
-                    right: 9em;
-                }
-                @media screen and (min-width: $breakpoint-desktop){
-                    right: 18em;
-                }
-                @media screen and (min-width: $max-screen){
-                    right:60px;
-                }
+             transform: scaleX(1);
+
             }
             .card:hover > span{
                 padding-right: 4em;
@@ -278,6 +297,35 @@ body{
             margin-right: 10em;
             padding-left: 8em;
             padding-right: 8em;
+        }
+        .anim1{
+            animation: anim1 1 2s;
+            opacity: 1;
+        }
+        @keyframes anim1 {
+           0% {opacity:0;}
+           
+           100% {opacity:1;}
+        }
+        .anim2{
+            animation: anim2 1 3s;
+            opacity: 1;
+           
+        }
+        @keyframes anim2 {
+           0% {opacity:0;}
+           50% {opacity: 0;}
+           100% {opacity:1;}
+        }
+        .anim3{
+            animation: anim3 1 4s;
+            opacity: 1;
+           
+        }
+        @keyframes anim3 {
+           0% {opacity:0;}
+           50% {opacity: 0;}
+           100% {opacity:1;}
         }
     }
     .order{

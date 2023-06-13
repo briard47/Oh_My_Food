@@ -328,11 +328,30 @@ body .restaurants .menus .card div .like {
   padding-top: 0.3em;
   background: linear-gradient(0deg, #FF79DA -11.44%, #9356DC 123.93%);
   -webkit-background-clip: text;
-          background-clip: text;
-  color: white;
+  background-clip: text;
+  color: black;
+}
+body .restaurants .menus .card div .like:before {
+  position: relative;
+  content: "\f004";
+  left: 35px;
+  z-index: 2;
   transition: 3s;
 }
-body .restaurants .menus .card div input:checked + .like {
+body .restaurants .menus .card div .like:after {
+  color: white;
+  position: relative;
+  content: "\f004";
+  transition: 3s;
+  z-index: 1;
+}
+body .restaurants .menus .card div input:checked + .like:before {
+  opacity: 0;
+}
+body .restaurants .menus .card div input:checked + .like:after {
+  background: linear-gradient(0deg, #FF79DA -11.44%, #9356DC 123.93%);
+  -webkit-background-clip: text;
+  background-clip: text;
   font-weight: 900;
   color: transparent;
 }
