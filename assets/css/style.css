@@ -152,9 +152,9 @@ body .info a:hover {
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
 }
 body .fonctionnement {
-  margin: 3em;
   display: flex;
   flex-direction: column;
+  margin: 3em;
 }
 @media screen and (min-width: 600px) {
   body .fonctionnement {
@@ -217,9 +217,9 @@ body .fonctionnement div button .number {
   padding: 0.1em 0.4em 0em 0.4em;
 }
 body .restaurants {
-  max-width: 100%;
   display: flex;
   flex-direction: column;
+  max-width: 100%;
   background-color: #f3f3f3;
 }
 @media screen and (min-width: 600px) {
@@ -339,11 +339,11 @@ body .restaurants .menus .card div .like:before {
   transition: 3s;
 }
 body .restaurants .menus .card div .like:after {
-  color: white;
   position: relative;
+  color: white;
   content: "\f004";
-  transition: 3s;
   z-index: 1;
+  transition: 3s;
 }
 body .restaurants .menus .card div input:checked + .like:before {
   opacity: 0;
