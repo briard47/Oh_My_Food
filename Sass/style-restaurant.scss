@@ -88,7 +88,7 @@ body{
             a{
                 position: absolute;
                 left: 2%;
-                top: 40%;
+                top: 37%;
                 background-color: white;
                 border: none;  
                 font-size:x-large;
@@ -239,6 +239,7 @@ body{
                 height: 5.1em;
                 margin-top: 0.5em;
                 display: flex;
+                justify-content: center;
                 background:$tertiary-color;
                 border-top-right-radius: 20px;
                 border-bottom-right-radius: 20px;
@@ -256,6 +257,7 @@ body{
                     right:65px;
                 }
                 input{
+                    position:absolute;
                     height: 0;
                     width: 0;
                     visibility: hidden;
