@@ -279,6 +279,7 @@ body .restaurants .menus .card {
 @media screen and (min-width: 600px) {
   body .restaurants .menus .card {
     width: 42%;
+    min-width: 288px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -296,12 +297,8 @@ body .restaurants .menus .card a img {
   border-top-right-radius: 20px;
   width: 100%;
   height: 200px;
-}
-@media screen and (min-width: 600px) {
-  body .restaurants .menus .card a img {
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 body .restaurants .menus .card a .badge {
   position: absolute;

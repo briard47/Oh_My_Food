@@ -149,7 +149,7 @@ body{
         background-color: $background;
         .title{
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             padding:1em 0.5em 0em 2em;
             h1{
             font-family: 'Shrikhand';
@@ -157,6 +157,9 @@ body{
             font-weight: 400;
             font-style: italic;
             width:300px;
+            }
+            label{
+                display:flex;
             }
             input{
                 height: 0;
@@ -170,9 +173,7 @@ body{
                 padding-top: 0.1em;    
                 @include gradient-background-clip;
                 color: black;
-                @media screen and (min-width: $breakpoint-tablet) {
-                    padding-top: 0.6em;
-               }
+                align-self: center;
             }
             .like:before{
                 position:relative;

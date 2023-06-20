@@ -141,7 +141,7 @@ body section {
 }
 body section .title {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1em 0.5em 0em 2em;
 }
 body section .title h1 {
@@ -150,6 +150,9 @@ body section .title h1 {
   font-weight: 400;
   font-style: italic;
   width: 300px;
+}
+body section .title label {
+  display: flex;
 }
 body section .title input {
   height: 0;
@@ -165,11 +168,7 @@ body section .title .like {
   -webkit-background-clip: text;
   background-clip: text;
   color: black;
-}
-@media screen and (min-width: 600px) {
-  body section .title .like {
-    padding-top: 0.6em;
-  }
+  align-self: center;
 }
 body section .title .like:before {
   position: relative;
